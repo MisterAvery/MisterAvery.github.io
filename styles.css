@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  color: var(--accentBlack);
+}
+
+:root {
+  --main: #f3f1f1;
+  --accentBlue: #29f;
+  --accentBlack: #222;
+}
+
+#nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  line-height: 50px;
+  background: var(--main);
+  box-shadow: 0 0 8px 0 var(--accentBlack); 
+  z-index: 10;
+}
+
+.logo {
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  width: 53%;
+}
+
+.link {
+  width: 33.3%;
+  height: 100%;
+  background: var(--accentBlue);
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 250ms;
+}
+
+.link:hover, .active {
+  background: #222;
+  color: var(--main);
+  box-shadow: 0 0 6px 0 #000;
+}
+
+
+main {
+  width: 100%;
+  margin: 50px auto 0;
+}
+
+.pic {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+  background-size: cover;
+  background-position: right;
+}
+
+.pic::after {
+  content: 'Photo by Émile Perron on Unsplash';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accentBlue);
+  color: var(--main);
+  padding: 2px 20px
+}
+
+.pic .hero {
+  position: absolute;
+  background: var(--main);
+  width: 58%;
+  max-width: 500px;
+  padding: 30px;
+  left: 28%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pic .hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: var(--accentBlue);
+  background: var(--accentBlack);
+  padding: 8px 20px;
+}
+
+.pic .hero p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.skills {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--main);
+  margin-top: 30px;
+}
+
+.skills h1 {
+  font-size: 35px;
+}
+
+.skill {
+  background: var(--accentBlue);
+  padding: 30px;
+  text-align: center;
+  min-width: 20%;
+  transition: 300ms;
+}
+
+.skill i {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 18px; 
+}
+
+.skill h2 {
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.skill:hover {
+  transform: scale(1.03);
+  box-shadow: 5px 5px 8px 0 var(--accentBlack);
+}
+
+.about {
+  background: var(--main);
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  margin: 20px 0;
+}
+
+.about h1 {
+  font-size: 35px;
+  margin-bottom: 15px; 
+}
+
+.about p {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 675px) {
+  #nav {
+    flex-direction: column;
+    height: 43px;
+    line-height: 43px;
+    transition: 100ms height;
+  }
+
+  .logo {
+    font-size: 23px;
+    margin-bottom: 18px;
+  }
+
+  .links {
+    width: 90%;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
+    display: none;
+  }
+
+  .link {
+    height: 100px;
+    line-height: 100px;
+    width: 100%;
+    font-size: 17px;
+  }
+
+  main {
+    margin-top: 43px;
+  }
+
+  .pic {
+    height: calc(100vh - 50px);
+  }
+
+  .pic .hero {
+    left: 50%;
+    width: 77%;
+  }
+
+  .pic .hero h1 {
+    font-size: 37px;
+    
+  }
+  
+  .pic .hero p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .skills {
+    flex-direction: column;
+    padding: 30px 0;
+  }
+
+  .skills h1 {
+    font-size: 33px;
+  }
+
+  .skill {
+    margin: 6px 0;
+    min-width: 250px;
+  }
+
+  .skill i {
+    font-size: 37px;
+  }
+
+  .skill h2 {
+    font-size: 22px;
+  }
+
+  .about h1 {
+    font-size: 35px;
+  }
+
+  .about p {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
