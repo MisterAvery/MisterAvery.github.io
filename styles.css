@@ -8,8 +8,13 @@
 
 :root {
   --main: #f3f1f1;
-  --accentBlue: #29f;
+  --accentBlue: #00a2ff;
   --accentBlack: #222;
+  --accentRed: #f23;
+}
+
+span {
+  color: var(--accentRed);
 }
 
 #nav {
@@ -22,11 +27,15 @@
   top: 0;
   width: 100%;
   height: 50px;
-  padding-left: 20px;
+  padding-left: 30px;
   line-height: 50px;
   background: var(--main);
   box-shadow: 0 0 8px 0 var(--accentBlack); 
-  z-index: 10;
+  z-index: 9;
+}
+
+.hamburger {
+  display: none;
 }
 
 .logo {
@@ -58,7 +67,6 @@
   box-shadow: 0 0 6px 0 #000;
 }
 
-
 main {
   width: 100%;
   margin: 50px auto 0;
@@ -68,7 +76,7 @@ main {
   position: relative;
   width: 100%;
   height: calc(100vh - 50px);
-  background: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+  background: url(./bg.jpg);
   background-size: cover;
   background-position: right;
 }
@@ -78,7 +86,7 @@ main {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background: var(--accentBlue);
   color: var(--main);
   padding: 2px 20px
@@ -88,8 +96,9 @@ main {
   position: absolute;
   background: var(--main);
   width: 58%;
+  min-width: 265px;
   max-width: 500px;
-  padding: 30px;
+  padding: 40px;
   left: 28%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -97,15 +106,16 @@ main {
 
 .pic .hero h1 {
   font-size: 40px;
+  text-align: center;
   margin-bottom: 10px;
   color: var(--accentBlue);
   background: var(--accentBlack);
-  padding: 8px 20px;
+  padding: 8px 0;
 }
 
 .pic .hero p {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .skills {
@@ -116,7 +126,6 @@ main {
   align-items: center;
   justify-content: space-evenly;
   background: var(--main);
-  margin-top: 30px;
 }
 
 .skills h1 {
@@ -142,7 +151,7 @@ main {
   letter-spacing: 2px;
 }
 
-.skill:hover {
+.skill:hover, .projectCat:hover {
   transform: scale(1.03);
   box-shadow: 5px 5px 8px 0 var(--accentBlack);
 }
@@ -162,6 +171,21 @@ main {
 
 .about p {
   font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.more {
+  color: var(--accentBlue);
+  background: var(--accentBlack);
+  width: 12%;
+  min-width: 150px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 675px) {
@@ -170,6 +194,7 @@ main {
     height: 43px;
     line-height: 43px;
     transition: 100ms height;
+    padding: 0;
   }
 
   .logo {
@@ -180,34 +205,48 @@ main {
   .links {
     width: 90%;
     flex-direction: column;
-    justify-content: normal;
-    align-items: center;
     display: none;
   }
 
   .link {
-    height: 100px;
-    line-height: 100px;
+    height: 33%;
     width: 100%;
-    font-size: 17px;
+    font-size: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 43px;
+    line-height: 43px;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    text-align: center;
+    background: var(--main);
+    box-shadow: 0 0 8px 0 var(--accentBlack); 
+    z-index: 10;
   }
 
   main {
-    margin-top: 43px;
+    margin: 43px 0;
   }
 
   .pic {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 43px);
   }
 
   .pic .hero {
     left: 50%;
-    width: 77%;
+    width: 85%;
+    text-align: center;
   }
 
   .pic .hero h1 {
     font-size: 37px;
-    
   }
   
   .pic .hero p {
