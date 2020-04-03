@@ -81,17 +81,6 @@ main {
   background-position: right;
 }
 
-.pic::after {
-  content: 'Photo by Émile Perron on Unsplash';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--accentBlue);
-  color: var(--main);
-  padding: 2px 20px
-}
-
 .pic .hero {
   position: absolute;
   background: var(--main);
